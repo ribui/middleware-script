@@ -7,9 +7,23 @@ echo "We are installing Sonarqube on CentOS7"
 
 
 sudo yum update -y
-
+if [ $?=0 ]
+then
+echo "update successfull"
+else
+echo "update failed!"
+exit 1
+fi
+sleep 3
 sudo yum install java-11-openjdk-devel -y
-
+if [ $?=0 ]
+then
+echo "java-11 installed successfully"
+else
+echo "jave-11 failed!"
+exit 1
+fi
+sleep 3
 sudo yum install java-11-openjdk -y
 
 sleep 2
